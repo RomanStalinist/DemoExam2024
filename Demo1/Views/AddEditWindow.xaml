@@ -1,0 +1,128 @@
+﻿<Window x:Class="Demo1.Views.AddEditWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        
+        WindowStartupLocation="CenterScreen"
+        Title="Добавление, редактирование партнёра" Height="460"
+        Width="500" MinHeight="460" MinWidth="500">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition MaxHeight="100"/>
+            <RowDefinition Height="5*"/>
+        </Grid.RowDefinitions>
+        
+        <DockPanel Background="{DynamicResource SecondaryColor}">
+            <Image Margin="10"
+                   Source="/Assets/favicon.ico"
+                   VerticalAlignment="Center"/>
+            <TextBlock Text="Мастер пол"
+                       FontSize="28"
+                       FontWeight="Bold"
+                       VerticalAlignment="Center"/>
+        </DockPanel>
+
+        <Grid Grid.Row="1"
+              Margin="15">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="160"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="Наименование"/>
+            <TextBox Grid.Column="1"
+                     Text="{Binding Title}"
+                     x:Name="TitleBox"
+                     MaxLength="100"
+                     ToolTip="Введите наименование партнёра"/>
+
+            <TextBlock Text="Тип партнера"
+                       Grid.Row="1"/>
+            <ComboBox x:Name="TypeComboBox"
+                      Text="{Binding Type}"
+                      Grid.Row="1" Grid.Column="1"
+                      ToolTip="Выберите тип партнёра"/>
+
+            <TextBlock Text="Рейтинг компании"
+                       Grid.Row="2"/>
+            <TextBox Text="{Binding Rating}" MaxLength="3"
+                     Grid.Row="2" Grid.Column="1"
+                     x:Name="RatingBox"
+                     ToolTip="Введите сюда рейтинг партнёра в формате XX"/>
+
+            <TextBlock Text="Адрес компании"
+                       Grid.Row="3"/>
+            <TextBox Text="{Binding LegalAddress}"
+                     MaxLength="255"
+                     Grid.Row="3"
+                     Grid.Column="1"
+                     x:Name="AddressBox"
+                     ToolTip="Введите сюда адрес партнёра"/>
+            
+            <TextBlock Text="ФИО Директора"
+                       Grid.Row="4"/>
+            <TextBox Text="{Binding Director}"
+                     MaxLength="255"
+                     Grid.Row="4"
+                     Grid.Column="1"
+                     x:Name="DirectorBox"
+                     ToolTip="Введите сюда ФИО директора"/>
+            
+            <TextBlock Text="Телефон компании"
+                       Grid.Row="5"/>
+            <TextBox Text="{Binding Phone}" MaxLength="13"
+                     Grid.Row="5" Grid.Column="1"
+                     x:Name="PhoneBox"
+                     ToolTip="Введите сюда номер телефона партнёра в формате 000 000 00 00"/>
+            
+            <TextBlock Text="Почта компании"
+                       Grid.Row="6"/>
+            <TextBox Text="{Binding Email}" MaxLength="255"
+                     Grid.Row="6" Grid.Column="1"
+                     x:Name="EmailBox"
+                     ToolTip="Введите сюда адрес электронной почты партнёра"/>
+            
+            <TextBlock Text="ИНН"
+                       Grid.Row="7"/>
+            <TextBox Text="{Binding INN}" MaxLength="10"
+                     Grid.Row="7" Grid.Column="1"
+                     x:Name="InnBox"
+                     ToolTip="Введите сюда ИНН партнёра в формате XXXXXXXXXX"/>
+
+            <StackPanel Grid.Row="9"
+                        Grid.ColumnSpan="2"
+                        Orientation="Horizontal"
+                        HorizontalAlignment="Right"
+                        Margin="0,8">
+                <Button x:Name="DeleteBtn"
+                        Content="Очистить"
+                        Visibility="Visible"
+                        Margin="0,0,10,0"
+                        Click="DeleteBtn_Click"/>
+                <Button x:Name="SaveBtn"
+                        Content="Сохранить"
+                        Click="SaveBtn_Click"/>
+                <Button x:Name="backBtn"
+                        Content="Назад"
+                        Margin="10,0,0,0"
+                        Click="BackBtn_Click"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>
