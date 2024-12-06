@@ -4,15 +4,15 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="177a3bb47c1742c9867b632c70ca7d68" Name="Diagram1">
+      <Diagram DiagramId="157da2e1a2e940adb746f94558ae13d1" Name="Diagram1">
         <EntityTypeShape EntityType="Demo1.Data.MaterialType" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Demo1.Data.PartnerProduct" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="Demo1.Data.Partner" Width="1.5" PointX="3" PointY="5.875" IsExpanded="true" />
         <EntityTypeShape EntityType="Demo1.Data.Product" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="Demo1.Data.ProductType" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
         <EntityTypeShape EntityType="Demo1.Data.sysdiagram" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
-        <AssociationConnector Association="Demo1.Data.FK__PartnerPr__Partn__440B1D61" ManuallyRouted="false" />
-        <AssociationConnector Association="Demo1.Data.FK__PartnerPr__Produ__4316F928" ManuallyRouted="false" />
+        <AssociationConnector Association="Demo1.Data.FK__PartnerPr__Partn__778AC167" ManuallyRouted="false" />
+        <AssociationConnector Association="Demo1.Data.FK__PartnerPr__Produ__76969D2E" ManuallyRouted="false" />
         <AssociationConnector Association="Demo1.Data.FK__Products__TypeId__403A8C7D" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>

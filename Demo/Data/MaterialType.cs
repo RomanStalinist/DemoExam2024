@@ -7,19 +7,15 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Demo1.Data
+namespace Demo.Data
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class PartnerProduct
+    public partial class MaterialType
     {
-        public int ProductID { get; set; }
-        public int PartnerID { get; set; }
-        public long CountProduct { get; set; }
-        public System.DateTime DateSale { get; set; }
-    
-        public virtual Partner Partner { get; set; }
-        public virtual Product Product { get; set; }
+        public int ID { get; set; }
+        public string Title { get; set; }
+        public decimal ScrapRate { get; set; }
     }
 }

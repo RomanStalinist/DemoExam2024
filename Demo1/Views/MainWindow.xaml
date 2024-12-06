@@ -50,23 +50,23 @@
                     <DataTemplate>
                         <Border BorderThickness="1"
                                 BorderBrush="Black">
-                            <Border.ContextMenu>
-                                <ContextMenu>
-                                    <MenuItem Header="_Изменить"
-                                              x:Name="EditMenuItem"
-                                              Click="EditMenuItem_Click"
-                                              Tag="{Binding}"/>
-                                    <MenuItem Header="_История реализаций"
-                                              x:Name="HistoryMenuItem"
-                                              Click="HistoryMenuItem_Click"
-                                              Tag="{Binding}"/>
-                                    <MenuItem Header="_Удалить"
-                                              x:Name="DeleteMenuItem"
-                                              Click="DeleteMenuItem_Click"
-                                              Tag="{Binding}"/>
-                                </ContextMenu>
-                            </Border.ContextMenu>
                             <Grid Margin="10" HorizontalAlignment="Stretch">
+                                <Grid.ContextMenu>
+                                    <ContextMenu>
+                                        <MenuItem Header="_Изменить"
+                                                  x:Name="EditMenuItem"
+                                                  Click="EditMenuItem_Click"
+                                                  Tag="{Binding}"/>
+                                        <MenuItem Header="_История реализаций"
+                                                  x:Name="HistoryMenuItem"
+                                                  Click="HistoryMenuItem_Click"
+                                                  Tag="{Binding}"/>
+                                        <MenuItem Header="_Удалить"
+                                                  x:Name="DeleteMenuItem"
+                                                  Click="DeleteMenuItem_Click"
+                                                  Tag="{Binding}"/>
+                                    </ContextMenu>
+                                </Grid.ContextMenu>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="4*"/>
                                     <ColumnDefinition MaxWidth="170"

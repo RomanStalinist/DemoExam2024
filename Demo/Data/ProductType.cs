@@ -7,19 +7,24 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Demo1.Data
+namespace Demo.Data
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class PartnerProduct
+    public partial class ProductType
     {
-        public int ProductID { get; set; }
-        public int PartnerID { get; set; }
-        public long CountProduct { get; set; }
-        public System.DateTime DateSale { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public ProductType()
+        {
+            this.Products = new HashSet<Product>();
+        }
     
-        public virtual Partner Partner { get; set; }
-        public virtual Product Product { get; set; }
+        public int ID { get; set; }
+        public string Title { get; set; }
+        public decimal Ratio { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Product> Products { get; set; }
     }
 }

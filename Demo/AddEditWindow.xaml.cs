@@ -1,22 +1,20 @@
-﻿using Demo1.Data;
+﻿using Demo.Data;
 using System;
 using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Windows;
 
-namespace Demo1.Views
+namespace Demo
 {
     public partial class AddEditWindow
     {
         private Partner _partner;
-        private static readonly string[] _types = { "ЗАО", "ООО", "ОАО", "ПАО" };
+        private readonly string[] _types = { "ПАО", "ООО", "ЗАО", "ОАО" };
 
         public AddEditWindow(Partner partner = null)
         {
             InitializeComponent();
             TypeComboBox.ItemsSource = _types;
-            Title = _partner is null ? "Добавление партнёра" : "Редактирование партнёра";
-
             _partner = partner ?? new Partner { Type = _types[0] };
             DataContext = _partner;
         }

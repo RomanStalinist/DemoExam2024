@@ -1,0 +1,86 @@
+﻿<Window x:Class="Demo.MainWindow"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        Width="800"
+        Height="450"
+        MinWidth="600"
+        MinHeight="300"
+        mc:Ignorable="d"
+        Title="Мастер пол">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        
+        <Border Background="{DynamicResource SecondaryColor}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Margin="12"
+                            Orientation="Horizontal">
+                    <Image Margin="0,0,12,0"
+                           Source="/Мастер пол.png"/>
+                    <TextBlock FontSize="32"
+                               Text="Мастер пол"
+                               FontWeight="SemiBold"
+                               VerticalAlignment="Center"/>
+                </StackPanel>
+
+                <Button Margin="8"
+                        FontSize="18"
+                        Padding="20,8"
+                        Grid.Column="1"
+                        x:Name="AddButton"
+                        Click="AddButton_Click"
+                        VerticalAlignment="Center"
+                        Content="Добавление партнера"/>
+            </Grid>
+        </Border>
+
+        <ListView Margin="8"
+                  Grid.Row="1"
+                  x:Name="PartnersListView"
+                  HorizontalContentAlignment="Stretch">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="10" HorizontalAlignment="Stretch">
+                        <Grid.ContextMenu>
+                            <ContextMenu>
+                                <MenuItem x:Name="Edit"
+                                          Header="Изменить"
+                                          Click="Edit_Click"/>
+                                <MenuItem Header="История"
+                                          x:Name="History"
+                                          Click="History_Click"/>
+                                <MenuItem x:Name="Delete"
+                                          Header="Удалить"
+                                          Foreground="Red"
+                                          Click="Delete_Click"/>
+                            </ContextMenu>
+                        </Grid.ContextMenu>
+                        
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        
+                        <StackPanel>
+                            <TextBlock Text="{Binding TypeName}"/>
+                            <TextBlock Text="{Binding Director}"/>
+                            <TextBlock Text="{Binding Phone}"/>
+                            <TextBlock Text="{Binding Rating, StringFormat={}Рейтинг: {0}}"/>
+                         </StackPanel>
+
+                        <TextBlock Text="{Binding Discount, StringFormat={}{0}%}" Grid.Column="1"/>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</Window>

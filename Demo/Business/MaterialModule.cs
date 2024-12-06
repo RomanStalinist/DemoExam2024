@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 
-namespace Demo1.Business
+namespace Demo.Business
 {
     public static class MaterialModule
     {

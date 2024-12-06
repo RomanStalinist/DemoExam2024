@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Demo1.Data
+namespace Demo.Data
 {
     using System;
     using System.Collections.Generic;
